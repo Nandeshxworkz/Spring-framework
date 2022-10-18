@@ -3,35 +3,34 @@ package com.xworkz.criminalsdata.dto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
+@Setter
 @ToString
-@Table(name="criminal_info")
+@Entity
+@Table(name = "criminal")
+@NamedQueries({ @NamedQuery(name = "findAll", query = "select criminal from CriminalDTO criminal") })
 
 public class CriminalDTO {
 
 	@Id
-	@GenericGenerator(name="auto",strategy = "increment")
-	@GeneratedValue(generator = "auto")
-	private int id;
-	private String name;
-	private Integer age;
+	@GenericGenerator(name = "crime", strategy = "increment")
+	@GeneratedValue(generator = "crime")
+	private Integer cId;
+	private String criminalName;
+	private String criminalAge;
 	private String country;
 	private String criminalType;
-	private Integer noOfCases;
+	private String noOfCases;
 	private String alive;
 	private String gender;
 	private String international;
@@ -42,4 +41,9 @@ public class CriminalDTO {
 	private String leftHandName;
 	private String prisonName;
 	private String netWorth;
+
+	public CriminalDTO() {
+
+		System.out.println("Calling Default Constructor of:" + this.getClass().getSimpleName());
+	}
 }

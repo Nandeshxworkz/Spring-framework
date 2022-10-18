@@ -11,33 +11,43 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-
 @Configuration
 public class DBConfiguration {
 
 	
-	   @Bean
-	   public LocalContainerEntityManagerFactoryBean entityManager(DataSource dataSource) {
-			LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-		    factoryBean.setPackagesToScan("com.xworkz");
-		    factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-		    System.out.println("Getting data source from spring ");
-		    
-		   Map<String, Object> jpaProperties = new HashMap<String , Object>();
-		    jpaProperties.put("hibernate.show_sql", true);
-		    factoryBean.setDataSource(dataSource);
-		    factoryBean.setJpaPropertyMap(jpaProperties);
-		    return factoryBean;
-	   }
-	   
-	   @Bean
-	   public DataSource dataSource() {
-		   DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		   dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		   dataSource.setUrl("jdbc:mysql://localhost:3306/criminal");
-		   dataSource.setPassword("Nandesh@1234");
-		   dataSource.setUsername("root");
-		   return dataSource;
-		   
-	   }
+	
+	public DBConfiguration() {
+		System.out.println("Calling Default Constructor of:" + this.getClass().getSimpleName());
+	}
+
+	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManager(DataSource dataSource) {
+
+		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+		factoryBean.setPackagesToScan("com.xworkz");
+		factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+		System.out.println("Getting Data From Browser");
+		factoryBean.setDataSource(dataSource);
+
+		Map<String, Object> jpaProperties = new HashMap<String, Object>();
+		jpaProperties.put("hibernate.show_sql", true);
+		
+		factoryBean.setJpaPropertyMap(jpaProperties);
+		return factoryBean;
+
+	}
+
+	@Bean
+	public DataSource dataSource() {
+
+		System.out.println("Created DataSource");
+		DriverManagerDataSource dataSourse = new DriverManagerDataSource();
+		dataSourse.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSourse.setUrl("jdbc:mysql://localhost:3306/criminal");
+		dataSourse.setPassword("Nandesh@1234");
+		dataSourse.setUsername("root");
+		return dataSourse;
+
+	}
+
 }

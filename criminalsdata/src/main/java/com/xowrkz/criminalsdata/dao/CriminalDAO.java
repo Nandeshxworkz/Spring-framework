@@ -1,9 +1,12 @@
 package com.xowrkz.criminalsdata.dao;
 
+import java.util.List;
+
 import com.xworkz.criminalsdata.dto.CriminalDTO;
 
-public interface CriminalDAO {
-	
-	Boolean save(CriminalDTO criminalDTO);
 
+public interface CriminalDAO {
+
+	public void save(CriminalDTO criminal);
+	public List<CriminalDTO> findAll();
 }
