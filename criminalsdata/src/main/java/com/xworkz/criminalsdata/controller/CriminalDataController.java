@@ -34,8 +34,9 @@ public class CriminalDataController {
 		}
 		else {
 			System.out.println("Data Entered Are not Valid");
-		return "index";
+		
 		}
+		return "index";
 	}
 	
 	@GetMapping
@@ -50,7 +51,7 @@ public class CriminalDataController {
 		else {
 			System.out.println("No Records Are Found");
 		}
-		return "CriminalData";
+		return "Display";
 		
 	}
 }

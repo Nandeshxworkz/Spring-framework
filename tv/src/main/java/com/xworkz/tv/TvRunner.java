@@ -12,9 +12,6 @@ public class TvRunner {
 		Tv tv = container.getBean(Tv.class);
 		System.out.println(tv);
 
-		
-	
-
 	}
 
 }

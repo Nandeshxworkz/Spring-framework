@@ -17,7 +17,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "criminal")
+@Table(name = "criminal_info")
 @NamedQueries({ @NamedQuery(name = "findAll", query = "select criminal from CriminalDTO criminal") })
 
 public class CriminalDTO {

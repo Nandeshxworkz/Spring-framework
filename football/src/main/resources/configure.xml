@@ -4,7 +4,13 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean class = "com.xworkz.football.FootBall"></bean>
+<bean class = "com.xworkz.football.FootBall">
+<constructor-arg name="price" value="36636"></constructor-arg>
+<constructor-arg name="brand" value="Ten"></constructor-arg>
+</bean>
+
+<bean class="com.xworkz.football.AirFilled"></bean>
+<!-- 
 <bean class="java.lang.Integer">
 <constructor-arg name="value" value="12"></constructor-arg>
 </bean>
@@ -15,5 +21,5 @@
 <bean class="java.lang.Float"> <constructor-arg name="value" value="141.63366"></constructor-arg> </bean>
 <bean class="java.lang.Character"> <constructor-arg name="value" value="A"></constructor-arg> </bean>
 <bean class="java.lang.Boolean"> <constructor-arg name="value" value="true"></constructor-arg> </bean>
-<bean class="java.lang.String"> <constructor-arg name="value" value="nandesh"></constructor-arg> </bean>
+<bean class="java.lang.String"> <constructor-arg name="value" value="nandesh"></constructor-arg> </bean>  -->
 </beans>

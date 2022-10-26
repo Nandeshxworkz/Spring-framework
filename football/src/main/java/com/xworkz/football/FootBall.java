@@ -5,11 +5,31 @@ public class FootBall {
 	private String brand;
 	private Double price;
 	
+	private AirFilled airfilled;
 	
 	
-	public FootBall() {
-		System.out.println(this.getClass().getSimpleName());
+	
+	public FootBall(AirFilled airfilled) {
+		
+		this.airfilled = airfilled;
 	}
+
+
+
+
+	public FootBall() {
+		System.out.println(this.getClass().getSimpleName()+"football bean is created");
+	}
+	
+	
+      
+
+	public FootBall(String brand, Double price) {
+		this.brand = brand;
+		this.price = price;
+	}
+
+
 
 
 	public String getBrand() {
@@ -32,10 +52,15 @@ public class FootBall {
 	}
 
 
+
+
 	@Override
 	public String toString() {
-		return "FootBall [brand=" + brand + ", price=" + price + "]";
+		return "FootBall [brand=" + brand + ", price=" + price + ", airfilled=" + airfilled + "]";
 	}
+
+
+
 	
 	
 

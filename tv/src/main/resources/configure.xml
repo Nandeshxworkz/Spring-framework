@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
 
-<bean class="com.xworkz.tv.Tv" >
+   <context:component-scan base-package="com.xworkz.tv"></context:component-scan>
+      
+   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+   <property name="locations" value="tv.properties"></property>
+   </bean>
+  
+   <bean class="com.xworkz.tv.Tv">
+    <property name="name" value="${ppName}"></property>  
+   </bean>
+
+</beans>
+
+
+  <!-- <bean class="com.xworkz.tv.Tv" >
   <constructor-arg name="name" value="Samsung"></constructor-arg>
   <constructor-arg name="brand" value="LG"></constructor-arg>
   <constructor-arg name="price" value="100000"></constructor-arg>
-   <constructor-arg name="display" ref="disp"></constructor-arg>
+   <constructor-arg name="display" ref="N"></constructor-arg>
    <constructor-arg name="remote" ref="V"> </constructor-arg>   
    <constructor-arg name="box" ref="P"></constructor-arg> 
    <constructor-arg name="stand" ref="B"></constructor-arg>
-   </bean>
+   </bean> --> 
 
 <!-- String name, String brand, double price, TvDisplay display, TvRemote remote, TvSetupbox box,
 			TvStand stand -->
-
-<bean class="com.xworkz.tv.TvDisplay"  id="disp">
+<!--<bean class="com.xworkz.tv.TvDisplay"  id="N">
 <constructor-arg name="type" value="hi"></constructor-arg>
 </bean>
 <bean class="com.xworkz.tv.TvRemote"  id="V">
@@ -29,6 +43,33 @@
 </bean>
 <bean class="com.xworkz.tv.TvStand" id="B">
 <constructor-arg name="type" value="super"></constructor-arg>
+</bean>  -->
+
+
+<!-- 
+
+<bean class="com.xworkz.tv.Tv" >
+<property name="name" value="Onida Tv"></property>
+<property name="brand" value="ONIDA"></property>
+<property name="price" value="2000000"></property>
+<property name="display" ref="tvdisplay"></property>
+<property name="remote" ref="tvremote"></property>
+<property name="box" ref="tvsetupbox"></property>
+<property name="stand" ref="tvstand"></property>
 </bean>
 
-</beans>
+
+<bean class="com.xworkz.tv.TvDisplay"  id="tvdisplay">
+<property name="type" value="HDR 4k"></property>
+
+</bean>
+<bean class="com.xworkz.tv.TvRemote"  id="tvremote">
+<property name="type" value="Sensor"></property>
+</bean>
+<bean class ="com.xworkz.tv.TvSetupbox" id="tvsetupbox">
+<property name="companyName" value="Dish"></property>
+</bean>
+<bean class="com.xworkz.tv.TvStand" id="tvstand">
+<property name="type" value="Metal"></property>
+</bean>  -->
+

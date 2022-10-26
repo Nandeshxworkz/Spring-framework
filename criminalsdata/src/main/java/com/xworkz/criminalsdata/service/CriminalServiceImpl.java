@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.xowrkz.criminalsdata.dao.CriminalDAO;
+import com.xworkz.criminalsdata.dao.CriminalDAO;
 import com.xworkz.criminalsdata.dto.CriminalDTO;
 
 @Service

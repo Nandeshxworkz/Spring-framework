@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Company Details</title>
+</head>
+<body>
+<a href="showDetails">Get Details</a>
+<br>
+<br>
+<form action = "comp" method ="post">
+Company Name:<input type="text"  id="name" name="cName"  placeholder="Enter Company Name"/>
+<br>
+<br>
+Company Founder:<input type="text" name="founder" id="md" placeholder="Enter The Founder Name"/>
+<br>
+<br>
+CreatedDate:<input type="text" name="date" id="date" placeholder="Enter The Date Of start"/>
+<br>
+<br>
+<label for="Employees">Select No Of Employees</label>
+Employees:<select name="emp" id="emp">
+				<option value="10-30">10 To 30 Employees</option>
+				<option value="30-70">30 To 70 Employees</option>
+				<option value="70-110">70 To 100 Employees</option>
+				<option value="110-350">110 To 350 Employees</option>
+		  </select>
+<br>
+<br>
+Address:<textarea id="loc" name="location" rows="4" cols="50" placeholder="Enter Your Address"></textarea>			  
+<br>
+<br>
+<label for="Business">Select Type Of Business</label>
+Business:<select name="busn" id="bus">
+				<option value="IT">IT Technology Company</option>
+				<option value="Mortgage">US Mortgage Company</option>
+				<option value="CA">Chartered Account Company</option>
+				<option value="Tech Suppourt">Technical Support Company</option>
+				<option value="Digital Market">Digital Marketing Company</option>
+		  </select>
+<br>
+<br>
+<input type = "submit" value = "Save"/>		  
+</form>
+</body>
+</html>
