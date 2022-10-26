@@ -10,8 +10,7 @@
 Confirmation Message:${Mesg}
 
 <h1>Shirt Details</h1>
-<form action="shirt" method="post">"
-
+<form action="shirt" method="post" enctype="multipart/form-data">"
 <pre>
 
 
@@ -57,10 +56,17 @@ Color : <select name="color">
 <option>Silver</option>
 </select>
 
+<br>
+<input type="file" name="image"/>
 <input type="submit" value="Save">
 
 
 </pre>
 </form>	
+<a href="shirt">Shirt Details </a>
+
+<a href="selectByBrand.jsp"> select By Brand </a>
+
+
 </body>
 </html>

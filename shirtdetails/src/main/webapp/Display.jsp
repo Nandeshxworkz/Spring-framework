@@ -28,7 +28,7 @@
 		</thead>
 		
 		<tbody>
-		<c:forEach var="shirt" items="${DetailsOfShirt}">
+		<c:forEach var="shirt" items="${ShirtDetails}">
 		<tr>
 		<td>${shirt.brand }</td>
 		<td>${shirt.size }</td>

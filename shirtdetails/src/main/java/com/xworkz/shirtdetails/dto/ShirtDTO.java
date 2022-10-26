@@ -3,6 +3,8 @@ package com.xworkz.shirtdetails.dto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -20,6 +22,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @Entity
 @Table(name="shirt_info")
+@NamedQueries({
+	@NamedQuery(name="findAll",query="select shirt from ShirtDTO shirt"),
+	@NamedQuery(name="findByBrand",query="select shirt from ShirtDTO shirt where shirt.brand=:br")
+})
 public class ShirtDTO {
 	@Id
 	@GenericGenerator(name="auto", strategy = "increment")
