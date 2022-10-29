@@ -23,9 +23,10 @@
 		<tbody>
 		<c:forEach var="login" items="${LoginDetails}">
 		<tr>
+		<td>${login.id}</td>
 		<td>${login.userName}</td>
 		<td>${login.email}</td>
-		<td>${login.image}</td>
+		<td><img  src="login/image?fileName=${login.fileName}" width="200px" height="200px"> </img> </td>
 		</tr>
 		</c:forEach>
 		

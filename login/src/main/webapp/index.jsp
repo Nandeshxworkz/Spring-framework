@@ -23,6 +23,6 @@ Profile Picture : <input type="file" name="image"/>
 
 </pre>
 </form>
-<!-- <a href="searchByUserName.jsp"> Search By Username </a>  -->
+ <a href="searchByUserName.jsp"> Search By Username </a> 
 </body>
 </html>
